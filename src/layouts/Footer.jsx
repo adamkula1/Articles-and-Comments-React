@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
     <footer>
-        <p><a href="https://adamkula.sk/" target="_blank" rel="noreferrer">© Jack Jackson</a> {new Date().getFullYear()}</p>
+        <p><a href="https://adamkula.sk/" target="_blank" rel="noreferrer">© Adam Kula</a> {new Date().getFullYear()}</p>
     </footer>
     </>
   )

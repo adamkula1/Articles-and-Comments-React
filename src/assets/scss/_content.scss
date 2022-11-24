@@ -1,12 +1,38 @@
 // ---------------CONTENT--------------
+main {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .container {
   margin: 0 auto;
-  max-width: 35%;
+  max-width: 85%;
+}
+
+.wrap-article {
+  width: 30%;
+}
+
+.box-comment {
+  width: 93%;
+}
+
+.wrap-article .comments {
+  padding-left: 16px;
+  margin: 0.5rem 0;
+}
+
+.wrap-article button {
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 0.5rem;
 }
 
 .wrap-comments {
   display: flex;
   justify-content: center;
+  margin: 1.5rem 0;
 }
 
 .wrap-comments .author {
@@ -27,18 +53,7 @@
 }
 
 .article-author {
-  margin-top: 1rem!important;
-}
-
-.wrap-article .comments {
-  padding-left: 16px;
-  margin: 0.5rem 0;
-}
-
-.wrap-article button {
-  margin: 0 auto;
-  display: flex;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem !important;
 }
 
 // ---------- MEDIA QUERIES ------

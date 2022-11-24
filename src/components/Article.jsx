@@ -1,22 +1,18 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import data from "../data/data-test.json";
 import Comment from "./Comment";
 import moment from "moment";
 
-const Article = (props) => {
-  const [articles] = useState(data.articles);
-  const [value, setValue] = useState(0);
-
-  const { author, date, title, image, text, comments } = articles[value];
-
+const Article = ({ author, date, title, image, text, comments }) => {
   const commentsPerRow = 2;
   const [next, setNext] = useState(commentsPerRow);
+
+  const [showComments, setShowComments] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   comments.sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
@@ -25,26 +21,43 @@ const Article = (props) => {
   const handleMoreComments = () => {
     setNext(next + commentsPerRow);
   };
- 
+
+  const loadComments = async () => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        setShowComments(true);
+        resolve();
+      }, 1000);
+    });
+
+    await promise;
+  };
+
+  useEffect(() => {
+    loadComments();
+    if (showComments) {
+      setTimeout(() => {
+        setShowButton(!showButton);
+      }, 1250);
+    }
+  }, [showComments]);
 
   return (
     <>
-      <section className="container wrap-article">
-        {/* <Card sx={{ maxWidth: 345 }}> */}
+      <section className="wrap-article">
         <Card>
           <CardMedia
             component="img"
             alt="connected"
-            height="100"
+            height="200"
             image={image}
+            sx={{ padding: "1em 1em 0 1em" }}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {title}
             </Typography>
-            <Typography variant="body2">
-              {text}
-            </Typography>
+            <Typography variant="body2">{text}</Typography>
             <Typography
               gutterBottom
               variant="body2"
@@ -63,20 +76,24 @@ const Article = (props) => {
               Date: {moment(date).format("MMMM Do YYYY, h:mm:ss a")}
             </Typography>
           </CardContent>
-          <h5 className="comments">Comments</h5>      
+          
+          <h6 className="comments">Comments</h6>
 
-          {comments?.slice(0, next)?.map((comment, index) => (
-            <Comment
-              key={index}
-              commentId={comment.id}
-              avatar={comment.avatar}
-              author={comment.author}
-              text={comment.text}
-              date={comment.date}
-            />
-          ))}
+          {showComments &&
+            comments
+              ?.slice(0, next)
+              ?.map((comment, index) => (
+                <Comment
+                  key={index}
+                  commentId={comment.id}
+                  avatar={comment.avatar}
+                  author={comment.author}
+                  text={comment.text}
+                  date={comment.date}
+                />
+              ))}
 
-          {next < comments?.length && (
+          {showButton && next < comments?.length && (
             <Button
               variant="contained"
               onClick={() => {
