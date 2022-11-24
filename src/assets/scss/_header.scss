@@ -1,0 +1,130 @@
+// ------------HEADER-------------
+header {
+  max-width: 99%;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-navigation;
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0px;
+  gap: var(--gap, 3rem);
+}
+
+header li {
+  font-family: $font-family-navigation;
+  font-size: $font-size-navigation;
+  text-transform: uppercase;
+  letter-spacing: $letter-space-s;
+  // padding-top: 2.5rem;
+
+  a {
+    // padding-top: 2.22rem;
+    color: $color-basic;
+    font-weight: $font-extra-light;
+  }
+}
+
+.active-nav {
+  border-bottom: 4px solid $color-active-gold;
+}
+
+header li a:hover,
+header li a:focus {
+  border-bottom: 4px solid $color-active-gold;
+}
+
+.menu-icon {
+  display: none;
+  z-index: 3;
+  border: none;
+  background: none;
+  color: $color-basic;
+}
+
+.menu-icon svg {
+  vertical-align: middle;
+}
+
+.navOpen {
+  display: flex;
+  position: fixed;
+  inset: 0px 0px 0px 30%;
+  padding: min(30vh, 3.5rem) 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1rem);
+}
+
+.navOpen li {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(80, 80, 80, 0.867);
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
+
+
+@media only screen and (max-width: 992px) {
+  ul {
+    gap: var(--gap, 2rem);
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    padding-top: 1.5rem;
+  }
+
+  header li {
+    padding-top: 2rem;
+
+    a {
+      padding-top: 0;
+    }
+  }
+
+  header a:hover,
+  header a:focus {
+    border-top: 0;
+  }
+
+  .active-nav {
+    border-top: 0;
+    border-bottom: 4px solid $color-active-gold;
+    padding-bottom: 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  header {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inherit;
+  }
+}

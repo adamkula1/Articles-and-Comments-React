@@ -1,0 +1,47 @@
+// ---------------CONTENT--------------
+.container {
+  margin: 0 auto;
+  max-width: 35%;
+}
+
+.wrap-comments {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap-comments .author {
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.wrap-comments .date {
+  color: gray;
+  margin-top: 0.2rem;
+  font-size: 12px;
+}
+
+.wrap-comments .text {
+  margin-bottom: 0;
+}
+
+.article-author {
+  margin-top: 1rem!important;
+}
+
+.wrap-article .comments {
+  padding-left: 16px;
+  margin: 0.5rem 0;
+}
+
+.wrap-article button {
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+// ---------- MEDIA QUERIES ------
+
+@media screen and (max-width: 1630px) {
+}

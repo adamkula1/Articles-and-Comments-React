@@ -1,0 +1,60 @@
+// -------VARIABLES-------------------------
+
+// Font-size
+$font-family-title: 'Bellefair', serif;
+$font-family-body: 'Barlow', sans-serif;
+$font-family-navigation: 'Barlow Condensed', sans-serif;
+
+// Font-size H1 - H5
+$font-size-h1: 125px;
+$font-size-h2: 56px;
+$font-size-h3: 50px;
+$font-size-h4: 32px;
+$font-size-h5: 28px;
+$font-size-h6: 24px;
+
+// Font-size
+$font-size-title: 30px;
+$font-size-body: 16px;
+$font-size-navigation: 18px;
+
+// Line-height
+$line-height-s: 25px;
+$line-height-m: 28px;
+$line-height-l: 32px;
+
+// Letter-space
+$letter-space-s: 2.5px;
+$letter-space-m: 2.7px;
+$letter-space-l: 4.72px;
+
+// Font-weight
+$font-thin: 100;
+$font-extra-light: 200;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+
+// Border-radius
+$border-radius-s: 5px;
+$border-radius-m: 10px;
+$border-radius-l: 15px;
+
+// Color
+$color-background: #292929;
+$color-navigation: #1F464D;
+$color-basic: #fafafa;
+$color-card: #3697A7;
+$color-btn: #3697A7;
+$color-success: #28a745;
+// Active-Color
+$color-active-gold: #FFD700;
+// Hover-Color
+$color-btn-blue: rgb(25, 124, 216);
+
+// Filter
+$filter: drop-shadow(1px 2px 5px rgba(0, 0, 0, 0.5))
+drop-shadow(4px 2px 125px rgba(255, 255, 255, 0.2));
