@@ -22,6 +22,7 @@ const Article = ({ author, date, title, image, text, comments }) => {
     setNext(next + commentsPerRow);
   };
 
+  //Prvá varianta načítavania komentárov
   const loadComments = async () => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -41,6 +42,19 @@ const Article = ({ author, date, title, image, text, comments }) => {
       }, 1250);
     }
   }, [showComments]);
+
+  //Druhá varianta načítavania komentárov
+  // const fetchComments = async () => {
+  //   setShowComments(true)
+
+  //   setTimeout(() => {
+  //          setShowButton(!showButton);
+  //        }, 1250);
+  //  };
+
+  //  useEffect(() => {
+  //    fetchComments();
+  //  }, []);
 
   return (
     <>
@@ -76,7 +90,7 @@ const Article = ({ author, date, title, image, text, comments }) => {
               Date: {moment(date).format("MMMM Do YYYY, h:mm:ss a")}
             </Typography>
           </CardContent>
-          
+
           <h6 className="comments">Comments</h6>
 
           {showComments &&
